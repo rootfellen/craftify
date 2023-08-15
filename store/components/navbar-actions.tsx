@@ -1,12 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@/components/ui/button";
+import { ShoppingBag } from "../node_modules/lucide-react";
 
 const NavbarActions = () => {
+  // prevent hydration errors as we are going to store number of cart items in the localsStorage
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
     <div className="ml-auto flex items-center gap-x-4">
-      <Button></Button>
+      <Button className="flex items-center rounded-full bg-black px-4 py-2">
+        <ShoppingBag size={20} color="white" />
+        <span className="ml-2 text-sm font-medium text-white">0</span>
+      </Button>
     </div>
   );
 };
