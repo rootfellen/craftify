@@ -1,11 +1,13 @@
 "use client";
 
-import Button from "@/components/ui/button";
-import IconButton from "@/components/ui/icon-button";
-import { Color, Size } from "@/types";
-import { Dialog } from "@headlessui/react";
-import { Plus, X } from "../../../../../node_modules/lucide-react";
 import { useState } from "react";
+import { Plus, X } from "../../../../../node_modules/lucide-react";
+import { Dialog } from "@headlessui/react";
+
+import IconButton from "@/components/ui/icon-button";
+import Button from "@/components/ui/button";
+import { Color, Size } from "@/types";
+
 import Filter from "./filter";
 
 interface MobileFiltersProps {
@@ -18,6 +20,7 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({ sizes, colors }) => {
 
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
+
   return (
     <>
       <Button onClick={onOpen} className="flex items-center gap-x-2 lg:hidden">

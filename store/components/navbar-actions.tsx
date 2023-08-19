@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Button from "@/components/ui/button";
 import { ShoppingBag } from "../node_modules/lucide-react";
-import useCart from "@/hooks/use-cart";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+
+import Button from "@/components/ui/button";
+import useCart from "@/hooks/use-cart";
 
 const NavbarActions = () => {
-  // prevent hydration errors as we are going to store number of cart items in the localsStorage
-
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -21,6 +20,7 @@ const NavbarActions = () => {
   if (!isMounted) {
     return null;
   }
+
   return (
     <div className="ml-auto flex items-center gap-x-4">
       <Button

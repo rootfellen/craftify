@@ -1,8 +1,7 @@
 import { Product } from "@/types";
-
 import qs from "query-string";
 
-const URL = `${process.env.CRAFTIFY_PUBLIC_API_URL}/products`;
+const URL=`${process.env.NEXT_PUBLIC_API_URL}/products`;
 
 interface Query {
   categoryId?: string;
@@ -14,7 +13,7 @@ interface Query {
 const getProducts = async (query: Query): Promise<Product[]> => {
   const url = qs.stringifyUrl({
     url: URL,
-    query: {
+    query: { 
       colorId: query.colorId,
       sizeId: query.sizeId,
       categoryId: query.categoryId,

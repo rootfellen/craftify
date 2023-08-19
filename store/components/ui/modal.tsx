@@ -1,15 +1,17 @@
 "use client";
 
-import { Transition, Dialog } from "@headlessui/react";
-import IconButton from "./icon-button";
-import { Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import { X } from "../../node_modules/lucide-react";
+import { Fragment } from "react";
+
+import IconButton from "@/components/ui/icon-button";
 
 interface ModalProps {
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
 }
+
 const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   return (
     <Transition show={open} appear as={Fragment}>
