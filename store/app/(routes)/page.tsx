@@ -9,7 +9,7 @@ export const revalidate = 0; // so it will not be cached
 
 const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("732d4722-e771-4183-a229-8019298fa150");
+  const billboard = await getBillboard("86c27282-ffec-497c-91ed-f1d1b26fa1cf");
   return (
     <Container>
       <div className="space-y-10 pb-10">
